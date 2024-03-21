@@ -1,3 +1,48 @@
+.homepage__header{
+  background-color: #04203c;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.homepage__header__items{
+  display: flex;
+  
+}
+
+.homepage__header__item{
+  margin-right: 20px;
+}
+
+.homepage__body{
+  background-color: #04203c;
+  color: white;
+}
+
+.form-field{
+  font-size: 20px;
+  margin-right: 4px;
+  margin-left: 4px;
+  display: inline-block;
+  height: 40px;
+}
+
+.search-button{
+  font-size: 26px;
+  background-color: blue;
+  color: white;
+  border-radius: 8px;
+  height: 40px;
+  margin-left: 6px;
+}
+
 .reverse{
   font-size: 16px;
+}
+
+a {
+  text-decoration:none;
+  color: white;
 }
