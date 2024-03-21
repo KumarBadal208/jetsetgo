@@ -23,8 +23,9 @@
 
 .form-field{
   font-size: 20px;
-  margin-right: 4px;
-  margin-left: 4px;
+  margin: 4px;
+  /* margin-right: 4px;
+  margin-left: 4px; */
   display: inline-block;
   height: 40px;
 }
@@ -38,8 +39,16 @@
   margin-left: 6px;
 }
 
-.reverse{
-  font-size: 16px;
+.homepage__body__flights{
+  background-color: #04203c;
+}
+
+.flight{
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid rgb(130, 130, 160);
 }
 
 a {

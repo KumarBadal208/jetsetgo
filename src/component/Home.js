@@ -1,24 +1,51 @@
-// import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { FLIGHT_API } from "../constants/apiEndpoint";
+import { convertUTCtoLocalDate } from "../utils/utcToLocal";
+import FlightCard from "./Flight-card";
 
 const Home = ()=>{
     var curr = new Date();
     curr.setDate(curr.getDate() + 3);
     var date = curr.toISOString().substring(0,10);
-
+    let [flights, setFlights] = useState([]);
+    let flightData;
     let source = useRef(null);
     let destination = useRef(null);
     let dateTime = useRef(null);
 
-    // useEffect(()=>{
+    useEffect(()=>{
+        fetchFlightData();
+    },[]);
 
-    // });
+    const fetchFlightData = async ()=>{
+        const data = await fetch(FLIGHT_API);
+        const json = await data.json();
+        flightData = json;
+        console.log("flight",flightData);
+        let filteredFlight = flightData.filter(res=>{
+            let dateval = convertUTCtoLocalDate(res.departureTime);
+            if(res.origin.toLowerCase() === source.current.value.toLowerCase() && 
+                res.destination.toLowerCase() === destination.current.value.toLowerCase() &&
+                dateval===dateTime.current.value){
+                return true;
+            }
+            else{
+                return false;
+            }
+
+            // res.origin.toLowerCase() === source.current.value.toLowerCase() && 
+            //     res.destination.toLowerCase() === destination.current.value.toLowerCase() &&
+            //     dateval===dateTime.current.value
+
+        });
+        console.log("filtered->",filteredFlight); 
+        setFlights(filteredFlight);
+    }
 
     const submitForm = ()=>{
-        console.log(source.current.value);
-        console.log(destination.current.value);
-        console.log(dateTime.current.value);
+        fetchFlightData();
     }
 
     return (
@@ -40,6 +67,12 @@ const Home = ()=>{
                             <input ref={dateTime} type="date" defaultValue={date} className="form-field" placeholder="Depart"/>
                             <button className="search-button" onClick={submitForm}>Search</button>
                         </form>
+                    </div>
+
+                    <div className="homepage__body__flights">
+                        {
+                            flights.map((res)=> <FlightCard key={res.id} flight={res}/>)
+                        }
                     </div>
                 </div>
             </div>
