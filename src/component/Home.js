@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FLIGHT_API } from "../constants/apiEndpoint";
@@ -14,10 +14,6 @@ const Home = ()=>{
     let source = useRef(null);
     let destination = useRef(null);
     let dateTime = useRef(null);
-
-    useEffect(()=>{
-        fetchFlightData();
-    },[]);
 
     const fetchFlightData = async ()=>{
         const data = await fetch(FLIGHT_API);
