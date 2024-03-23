@@ -1,7 +1,7 @@
 import { convertUTCtoLocalTime } from "../utils/utcToLocal";
+import { Link } from "react-router-dom";
 
-const FlightCard = ({flight})=>{
-    console.log("chuld",flight);
+const FlightCard = ({flight, cartFlag})=>{
     const departure = convertUTCtoLocalTime(flight.departureTime);
     const arrivalTime = convertUTCtoLocalTime(flight.arrivalTime);
     return (
@@ -12,10 +12,10 @@ const FlightCard = ({flight})=>{
                         {flight.airline}
                     </div>
                     <div>
-                        {departure} ---- {arrivalTime}
+                        {departure} ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ {arrivalTime}
                     </div>
                     <div>
-                        {flight.origin} ---- {flight.destination}
+                        {flight.origin} ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ {flight.destination}
                     </div>
                 </div>
                 <div className="flight__price">
@@ -23,7 +23,7 @@ const FlightCard = ({flight})=>{
                         ₹{flight.price}
                     </div>
                     <div>
-                        <button>Select</button>
+                        <Link to={"/cart/"+ flight.id}><button>Select</button></Link>
                     </div>
                 </div>
             </div>

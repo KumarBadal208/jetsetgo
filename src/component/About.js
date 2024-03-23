@@ -1,7 +1,7 @@
 const About = ()=>{
     return (
         <>
-            About Us Page dsf
+            About Us Page 
         </>
     )
 };

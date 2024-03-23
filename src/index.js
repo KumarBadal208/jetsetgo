@@ -7,6 +7,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './component/Home';
 import About from './component/About';
 import Error from './component/Error';
+import Flight from './component/Flight';
+import Cart from './component/Cart';
+import Contact from './component/Contact';
 
 const route = createBrowserRouter([
   {
@@ -17,13 +20,25 @@ const route = createBrowserRouter([
         path: "/",
         element: <Home />
       },
+      {
+        path: "/flight",
+        element: <Flight/>
+      },
+      {
+        path: "/cart/:id",
+        element: <Cart/>
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      }
     ],
     errorElement: <Error/>
-  },
-  {
-    path: "/about",
-    element: <About />
-  },
+  }
 ]); 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

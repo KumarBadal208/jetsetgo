@@ -1,3 +1,10 @@
+.app{
+  height: 100vh;
+  background-repeat: no-repeat;
+  width: 100vw;
+  background-color: rgb(150 155 255);
+}
+
 .homepage__header{
   background-color: #04203c;
   color: white;
@@ -5,11 +12,11 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 .homepage__header__items{
   display: flex;
-  
 }
 
 .homepage__header__item{
@@ -17,30 +24,41 @@
 }
 
 .homepage__body{
-  background-color: #04203c;
   color: white;
+  padding: 10px;
+}
+
+.homepage__text{
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .form-field{
   font-size: 20px;
   margin: 4px;
-  /* margin-right: 4px;
-  margin-left: 4px; */
   display: inline-block;
   height: 40px;
+  border-radius: 10px;
+  border: 2px solid #5d748a;
+  padding: 0.5rem;
+  width: 242px;
 }
 
 .search-button{
-  font-size: 26px;
+  font-size: 18px;
   background-color: blue;
+  border: 2px solid #5d748a;
   color: white;
   border-radius: 8px;
-  height: 40px;
   margin-left: 6px;
+  width: 200px;
 }
 
 .homepage__body__flights{
   background-color: #04203c;
+  margin: 0.6rem;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .flight{
@@ -49,9 +67,77 @@
   display: flex;
   justify-content: space-between;
   border: 2px solid rgb(130, 130, 160);
+  padding: 1rem;
+  margin: inherit;
+  border-radius: 10px;
 }
 
 a {
   text-decoration:none;
   color: white;
+}
+
+.flight__search_button{
+  font-size: 18px;
+  background-color: blue;
+  border: 2px solid #5d748a;
+  color: white;
+  border-radius: 8px;
+  margin-left: 6px;
+  padding: 1rem;
+  width: 200px;
+}
+
+*,
+*:focus{outline: none}
+
+.form{
+  font-family: sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.form-item{
+  position: relative;
+  margin: 10px;
+  color: #241c1c;
+}
+.form-item input{
+  display: block;
+  width: 400px;
+  height: 40px;
+  background: transparent;
+  border: solid 1px #161111;
+  transition: all .3s ease;
+  padding: 0 15px;
+  border-radius: 10px;
+}
+.form-item input:focus{
+  border-color: blue
+}
+.form-item label{
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: rgb(150 155 255);
+  padding: 0 10px;
+  /* color: #f7f3f3; */
+  transition: all .3s ease
+}
+.form-item input:focus + label,
+.form-item input:valid + label{
+  font-size: 12px;
+  top: -5px
+}
+.form-item input:focus + label{
+  color: blue
+}
+
+::placeholder {
+  color: rgb(228, 216, 216);
+  opacity: 1;
 }
