@@ -29,15 +29,14 @@ const Flight = ()=>{
                 return 0;
             }
         });
-
         setFlights(arr);
     }
 
     return (
-        <div>
+        <div className="flights__info">
+            <input ref={filterInputRef} onChange={filterAirline} className="form-field" placeholder="Search Airline"/>
+            <button onClick={sortByPrice} className="flight__search_button">Sort By Price</button>
             <div className="homepage__body__flights">
-                <input ref={filterInputRef} onChange={filterAirline} className="form-field" placeholder="Search Airline"/>
-                <button onClick={sortByPrice} className="flight__search_button">Sort By Price</button>
                 {
                     flights.map((res)=> <FlightCard key={res.id} flight={res} cartFlag={false} />)
                 }

@@ -8,22 +8,22 @@ const FlightCard = ({flight, cartFlag})=>{
         <>
             <div className="flight">
                 <div className="flight__detail">
-                    <div>
+                    <div className="flight__airline">
                         {flight.airline}
                     </div>
-                    <div>
-                        {departure} ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ {arrivalTime}
+                    <div className="flight__duration">
+                        {departure} ⎯⎯⎯⎯⎯⎯⎯⎯{flight.duration}⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ {arrivalTime}
                     </div>
-                    <div>
-                        {flight.origin} ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ {flight.destination}
+                    <div className="flight__duration">
+                        {flight.origin} ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ {flight.destination}
                     </div>
                 </div>
                 <div className="flight__price">
-                    <div>
+                    <div className="flight__duration">
                         ₹{flight.price}
                     </div>
                     <div>
-                        <Link to={"/cart/"+ flight.id}><button>Select</button></Link>
+                        <Link to={"/cart/"+ flight.id}><button className="select__button">Select</button></Link>
                     </div>
                 </div>
             </div>

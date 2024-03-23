@@ -2,7 +2,7 @@
   height: 100vh;
   background-repeat: no-repeat;
   width: 100vw;
-  background-color: rgb(150 155 255);
+  background-color: rgb(225 231 239);
 }
 
 .homepage__header{
@@ -24,13 +24,14 @@
 }
 
 .homepage__body{
-  color: white;
   padding: 10px;
 }
 
 .homepage__text{
   font-size: 24px;
   font-weight: 400;
+  margin-bottom: 20px;
+  margin-left: 12px;
 }
 
 .form-field{
@@ -41,35 +42,54 @@
   border-radius: 10px;
   border: 2px solid #5d748a;
   padding: 0.5rem;
-  width: 242px;
+  width: 284px;
+  margin-left: 28px;
 }
 
 .search-button{
-  font-size: 18px;
-  background-color: blue;
-  border: 2px solid #5d748a;
-  color: white;
-  border-radius: 8px;
+  background-color: rgb(255, 109, 56);
+  border-radius: 30px;
   margin-left: 6px;
   width: 200px;
+  line-height: normal;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding: 16px 45px;
+  outline: 0px;
+  border: 0px;
+  cursor: pointer;
 }
 
 .homepage__body__flights{
-  background-color: #04203c;
   margin: 0.6rem;
   padding: 1rem;
   border-radius: 10px;
+  max-height: 500px;
+  overflow: scroll;
+  border: 2px solid #d0d0d7;
+}
+
+.homepage__body__form{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 15px;
+    border-radius: 20px;
+    padding: 24px;
+    margin: 0px auto;
 }
 
 .flight{
-  background-color: black;
-  color: white;
+  width: auto;
   display: flex;
   justify-content: space-between;
-  border: 2px solid rgb(130, 130, 160);
-  padding: 1rem;
-  margin: inherit;
-  border-radius: 10px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.13) 0px 2px 4px 0px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 1rem;
+  padding: inherit;
+}
+
+.flights__info{
+  margin-top: 10px;
 }
 
 a {
@@ -77,15 +97,42 @@ a {
   color: white;
 }
 
+select{
+  background-color: green;
+}
+option{
+  color: yellow;
+}
+
 .flight__search_button{
   font-size: 18px;
   background-color: blue;
   border: 2px solid #5d748a;
   color: white;
-  border-radius: 8px;
+  border-radius: 16px;
   margin-left: 6px;
   padding: 1rem;
   width: 200px;
+}
+
+.flight__airline{
+    color: gray;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.flight__duration{
+  font-size: small;
+  font-weight: 700;
+}
+
+.select__button{
+  font-size: 18px;
+  background-color: blue;
+  border: 2px solid #5d748a;
+  color: white;
+  border-radius: 8px;
+  width: 120px;
 }
 
 *,
@@ -123,9 +170,8 @@ a {
   left: 10px;
   font-size: 12px;
   font-weight: bold;
-  background: rgb(150 155 255);
+  background: rgb(225 231 239);
   padding: 0 10px;
-  /* color: #f7f3f3; */
   transition: all .3s ease
 }
 .form-item input:focus + label,
@@ -138,6 +184,6 @@ a {
 }
 
 ::placeholder {
-  color: rgb(228, 216, 216);
-  opacity: 1;
+  color: rgb(19, 4, 4);
+  opacity: 0.5;
 }
